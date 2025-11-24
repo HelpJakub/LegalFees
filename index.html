@@ -23,9 +23,6 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Merriweather', 'serif'],
-                    },
-                    animation: {
-                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     }
                 }
             }
@@ -105,6 +102,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#story" class="text-sm font-medium text-gray-300 hover:text-white transition">The Story</a>
                     <a href="#financials" class="text-sm font-medium text-gray-300 hover:text-white transition">My Expenses</a>
+                    <a href="#tracker" class="text-sm font-medium text-gray-300 hover:text-white transition">Tracker</a>
                     <a href="#donate" class="px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-900/20">Help Out</a>
                 </div>
                 <!-- Mobile menu button -->
@@ -119,6 +117,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800 absolute w-full left-0 shadow-xl transition-all duration-300">
             <a href="#story" class="block px-4 py-4 text-gray-300 hover:bg-gray-800 font-medium border-b border-gray-800">The Story</a>
             <a href="#financials" class="block px-4 py-4 text-gray-300 hover:bg-gray-800 font-medium border-b border-gray-800">My Expenses</a>
+            <a href="#tracker" class="block px-4 py-4 text-gray-300 hover:bg-gray-800 font-medium border-b border-gray-800">Tracker</a>
             <a href="#donate" class="block px-4 py-4 text-blue-400 font-bold hover:bg-gray-800">Help Out</a>
         </div>
     </nav>
@@ -239,7 +238,7 @@
         </div>
     </section>
 
-    <!-- Financial Breakdown Section -->
+    <!-- Financial Breakdown Section (Visual Overhaul) -->
     <section id="financials" class="py-20 md:py-24 bg-gray-900 border-t border-gray-800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -251,7 +250,7 @@
 
             <div class="grid md:grid-cols-2 gap-6">
                 
-                <!-- Why I Can't Pay Now -->
+                <!-- Why I Can't Pay Now (Accordion Card) - Color Coded Red/Orange -->
                 <div class="glass-card p-6 md:p-8 rounded-2xl border-t-4 border-t-red-500 relative">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="p-2 bg-red-500/10 rounded-lg text-red-400 shadow-inner">
@@ -341,8 +340,9 @@
                     </div>
                 </div>
 
-                <!-- The Plan -->
+                <!-- The Plan (Card) - Color Coded Blue/Green -->
                 <div class="glass-card p-6 md:p-8 rounded-2xl border-t-4 border-t-emerald-500 relative overflow-hidden">
+                    <!-- Decorative gradient -->
                     <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
 
                     <div class="flex items-center gap-3 mb-6">
@@ -378,6 +378,56 @@
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+            <!-- Supporter Tracker Section -->
+    <section id="tracker" class="py-20 md:py-24 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-100 mb-4">Tracker & Accountability</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">
+                    To keep everything transparent, I'm tracking everyone who helps out. This list determines the order of repayment.
+                </p>
+            </div>
+
+            <div class="glass-card rounded-2xl border border-gray-700 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-gray-400">
+                        <thead class="bg-gray-800 text-gray-200 uppercase font-medium">
+                            <tr>
+                                <th class="px-6 py-4">Supporter</th>
+                                <th class="px-6 py-4">Amount</th>
+                                <th class="px-6 py-4">Date</th>
+                                <th class="px-6 py-4">Repayment Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <!-- Row 1 -->
+                            <tr class="hover:bg-gray-800/30 transition">
+                                <td class="px-6 py-4 font-medium text-white flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-full bg-blue-900/50 flex items-center justify-center text-blue-300 font-bold text-xs">
+                                        J
+                                    </div>
+                                    Jermaine
+                                </td>
+                                <td class="px-6 py-4 font-mono text-green-400 font-bold">$100</td>
+                                <td class="px-6 py-4">Nov 24, 2025</td>
+                                <td class="px-6 py-4">
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-900/30 text-yellow-400 border border-yellow-800">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+                                        Pending (Aug 2026)
+                                    </span>
+                                </td>
+                            </tr>
+                            <!-- Empty State -->
+                            <!-- Add more rows here manually as people donate -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-gray-800/50 px-6 py-3 border-t border-gray-700 text-xs text-gray-500 flex justify-between items-center">
+                    <span>Last Updated: Nov 24, 2025</span>
+                    <span class="italic">Want to stay anonymous? Just let me know.</span>
                 </div>
             </div>
         </div>
